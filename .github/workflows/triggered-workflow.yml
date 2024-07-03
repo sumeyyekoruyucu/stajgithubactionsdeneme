@@ -1,1 +1,16 @@
+name: Triggered Workflow
 
+on:
+  repository_dispatch:
+    types: [trigger_workflow]
+
+jobs:
+  run-on-dispatch:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Run Some Command
+      run: echo "Workflow triggered by another repo"
