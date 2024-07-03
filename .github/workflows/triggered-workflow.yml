@@ -10,7 +10,12 @@ jobs:
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3  # actions/checkout@v3 kullanarak güncelledik
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3  # actions/setup-node@v3 kullanarak güncelledik
+      with:
+        node-version: '20'  # Node.js 20'yi kullanacak şekilde ayarladık
 
     - name: Run Some Command
       run: echo "Workflow triggered by another repo"
